@@ -1,0 +1,18 @@
+[2024-06-18T00:01:57.745+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-18T00:01:57.800+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dag.preprocess_data_pyspark_task manual__2024-06-17T23:52:34.221451+00:00 [queued]>
+[2024-06-18T00:01:57.823+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dag.preprocess_data_pyspark_task manual__2024-06-17T23:52:34.221451+00:00 [queued]>
+[2024-06-18T00:01:57.824+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-18T00:01:57.890+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): preprocess_data_pyspark_task> on 2024-06-17 23:52:34.221451+00:00
+[2024-06-18T00:01:57.904+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'etl_dag', 'preprocess_data_pyspark_task', 'manual__2024-06-17T23:52:34.221451+00:00', '--job-id', '85', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpdlzukgn6']
+[2024-06-18T00:01:57.909+0000] {standard_task_runner.py:91} INFO - Job 85: Subtask preprocess_data_pyspark_task
+[2024-06-18T00:01:57.910+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=6447) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-18T00:01:57.911+0000] {standard_task_runner.py:63} INFO - Started process 6460 to run task
+[2024-06-18T00:01:58.084+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_dag.preprocess_data_pyspark_task manual__2024-06-17T23:52:34.221451+00:00 [running]> on host e1be22a1c874
+[2024-06-18T00:01:58.308+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_dag' AIRFLOW_CTX_TASK_ID='preprocess_data_pyspark_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-17T23:52:34.221451+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-17T23:52:34.221451+00:00'
+[2024-06-18T00:01:58.437+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-18T00:02:08.899+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-18T00:02:08.900+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-18T00:02:08.928+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=etl_dag, task_id=preprocess_data_pyspark_task, run_id=manual__2024-06-17T23:52:34.221451+00:00, execution_date=20240617T235234, start_date=20240618T000157, end_date=20240618T000208
+[2024-06-18T00:02:09.146+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-18T00:02:09.268+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-18T00:02:09.296+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

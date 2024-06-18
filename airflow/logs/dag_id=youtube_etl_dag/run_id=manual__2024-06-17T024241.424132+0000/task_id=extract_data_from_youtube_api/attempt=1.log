@@ -1,0 +1,40 @@
+[2024-06-17T02:42:45.389+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T02:42:45.419+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_etl_dag.extract_data_from_youtube_api manual__2024-06-17T02:42:41.424132+00:00 [queued]>
+[2024-06-17T02:42:45.429+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_etl_dag.extract_data_from_youtube_api manual__2024-06-17T02:42:41.424132+00:00 [queued]>
+[2024-06-17T02:42:45.430+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-17T02:42:45.473+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_data_from_youtube_api> on 2024-06-17 02:42:41.424132+00:00
+[2024-06-17T02:42:45.481+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'youtube_etl_dag', 'extract_data_from_youtube_api', 'manual__2024-06-17T02:42:41.424132+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/youtube_etl_dag.py', '--cfg-path', '/tmp/tmpuguze_7e']
+[2024-06-17T02:42:45.483+0000] {standard_task_runner.py:91} INFO - Job 24: Subtask extract_data_from_youtube_api
+[2024-06-17T02:42:45.484+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=923) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-17T02:42:45.485+0000] {standard_task_runner.py:63} INFO - Started process 936 to run task
+[2024-06-17T02:42:45.562+0000] {task_command.py:426} INFO - Running <TaskInstance: youtube_etl_dag.extract_data_from_youtube_api manual__2024-06-17T02:42:41.424132+00:00 [running]> on host f4ed4e4cfbd7
+[2024-06-17T02:42:45.844+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='youtube_etl_dag' AIRFLOW_CTX_TASK_ID='extract_data_from_youtube_api' AIRFLOW_CTX_EXECUTION_DATE='2024-06-17T02:42:41.424132+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-17T02:42:41.424132+00:00'
+[2024-06-17T02:42:45.845+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T02:42:45.859+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T02:43:19.020+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T02:43:19.022+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/youtube_etl_dag.py", line 45, in extract_data
+    df_trending_videos.to_csv('/opt/airflow/Youtube-Trending-Data-Raw.csv', index=False)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_csv'
+[2024-06-17T02:43:19.052+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=youtube_etl_dag, task_id=extract_data_from_youtube_api, run_id=manual__2024-06-17T02:42:41.424132+00:00, execution_date=20240617T024241, start_date=20240617T024245, end_date=20240617T024319
+[2024-06-17T02:43:19.132+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 24 for task extract_data_from_youtube_api ('list' object has no attribute 'to_csv'; 936)
+[2024-06-17T02:43:19.170+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-17T02:43:19.214+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-17T02:43:19.219+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

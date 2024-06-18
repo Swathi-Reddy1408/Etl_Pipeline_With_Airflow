@@ -1,0 +1,48 @@
+[2024-06-17T23:48:11.761+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T23:48:11.796+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_etl_dag.extract_data_from_youtube_api manual__2024-06-17T23:48:06.654038+00:00 [queued]>
+[2024-06-17T23:48:11.812+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_etl_dag.extract_data_from_youtube_api manual__2024-06-17T23:48:06.654038+00:00 [queued]>
+[2024-06-17T23:48:11.813+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-17T23:48:11.904+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_data_from_youtube_api> on 2024-06-17 23:48:06.654038+00:00
+[2024-06-17T23:48:11.918+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'youtube_etl_dag', 'extract_data_from_youtube_api', 'manual__2024-06-17T23:48:06.654038+00:00', '--job-id', '69', '--raw', '--subdir', 'DAGS_FOLDER/youtube_etl_dag.py', '--cfg-path', '/tmp/tmp9flm093o']
+[2024-06-17T23:48:11.922+0000] {standard_task_runner.py:91} INFO - Job 69: Subtask extract_data_from_youtube_api
+[2024-06-17T23:48:11.924+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=5357) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-17T23:48:11.925+0000] {standard_task_runner.py:63} INFO - Started process 5370 to run task
+[2024-06-17T23:48:12.066+0000] {task_command.py:426} INFO - Running <TaskInstance: youtube_etl_dag.extract_data_from_youtube_api manual__2024-06-17T23:48:06.654038+00:00 [running]> on host e1be22a1c874
+[2024-06-17T23:48:12.518+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='youtube_etl_dag' AIRFLOW_CTX_TASK_ID='extract_data_from_youtube_api' AIRFLOW_CTX_EXECUTION_DATE='2024-06-17T23:48:06.654038+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-17T23:48:06.654038+00:00'
+[2024-06-17T23:48:12.521+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T23:48:12.541+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T23:48:34.282+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T23:48:34.286+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/youtube_etl_dag.py", line 43, in extract_data
+    df_trending_videos = fetch_data(api_key, region_codes, category_ids)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/youtube_etl_dag.py", line 74, in fetch_data
+    response = request.execute()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 503 when requesting https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&videoCategoryId=23&maxResults=50&key=AIzaSyD1ZDOXbum9HiukOJgKNPn4O5jviRYk7yI&alt=json returned "The service is currently unavailable.". Details: "[{'message': 'The service is currently unavailable.', 'domain': 'global', 'reason': 'backendError'}]">
+[2024-06-17T23:48:34.336+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=youtube_etl_dag, task_id=extract_data_from_youtube_api, run_id=manual__2024-06-17T23:48:06.654038+00:00, execution_date=20240617T234806, start_date=20240617T234811, end_date=20240617T234834
+[2024-06-17T23:48:34.458+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 69 for task extract_data_from_youtube_api (<HttpError 503 when requesting https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&videoCategoryId=23&maxResults=50&key=AIzaSyD1ZDOXbum9HiukOJgKNPn4O5jviRYk7yI&alt=json returned "The service is currently unavailable.". Details: "[{'message': 'The service is currently unavailable.', 'domain': 'global', 'reason': 'backendError'}]">; 5370)
+[2024-06-17T23:48:34.494+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-17T23:48:34.545+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-17T23:48:34.547+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,19 @@
+[2024-06-18T00:10:37.438+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-18T00:10:37.485+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_etl_dag.load_data_to_s3 manual__2024-06-18T00:09:32.264515+00:00 [queued]>
+[2024-06-18T00:10:37.501+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_etl_dag.load_data_to_s3 manual__2024-06-18T00:09:32.264515+00:00 [queued]>
+[2024-06-18T00:10:37.503+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-18T00:10:37.568+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_data_to_s3> on 2024-06-18 00:09:32.264515+00:00
+[2024-06-18T00:10:37.585+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'youtube_etl_dag', 'load_data_to_s3', 'manual__2024-06-18T00:09:32.264515+00:00', '--job-id', '98', '--raw', '--subdir', 'DAGS_FOLDER/youtube_etl_dag.py', '--cfg-path', '/tmp/tmpew5k573w']
+[2024-06-18T00:10:37.588+0000] {standard_task_runner.py:91} INFO - Job 98: Subtask load_data_to_s3
+[2024-06-18T00:10:37.594+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=7675) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-18T00:10:37.595+0000] {standard_task_runner.py:63} INFO - Started process 7688 to run task
+[2024-06-18T00:10:37.735+0000] {task_command.py:426} INFO - Running <TaskInstance: youtube_etl_dag.load_data_to_s3 manual__2024-06-18T00:09:32.264515+00:00 [running]> on host e1be22a1c874
+[2024-06-18T00:10:38.049+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='youtube_etl_dag' AIRFLOW_CTX_TASK_ID='load_data_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T00:09:32.264515+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-18T00:09:32.264515+00:00'
+[2024-06-18T00:10:38.050+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-18T00:10:38.156+0000] {youtube_etl_dag.py:170} INFO - Uploading /opt/airflow/Transformed_Youtube_Data_20240618/part-00000-c9f915ea-8954-40e1-9ea1-ec3e20c0b828-c000.csv to s3://apache-airflow-project-load-processed-data-14081999/processed-data/2024/06/18/part-00000-c9f915ea-8954-40e1-9ea1-ec3e20c0b828-c000.csv
+[2024-06-18T00:10:39.470+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-18T00:10:39.472+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-18T00:10:39.499+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=youtube_etl_dag, task_id=load_data_to_s3, run_id=manual__2024-06-18T00:09:32.264515+00:00, execution_date=20240618T000932, start_date=20240618T001037, end_date=20240618T001039
+[2024-06-18T00:10:39.624+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-18T00:10:39.668+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-18T00:10:39.670+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

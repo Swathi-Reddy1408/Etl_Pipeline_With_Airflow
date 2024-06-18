@@ -1,0 +1,53 @@
+[2024-06-17T00:24:15.431+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-17T00:24:15.474+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_etl_dag.extract_data_from_youtube_api manual__2024-06-17T00:22:57.834197+00:00 [queued]>
+[2024-06-17T00:24:15.487+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_etl_dag.extract_data_from_youtube_api manual__2024-06-17T00:22:57.834197+00:00 [queued]>
+[2024-06-17T00:24:15.489+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-17T00:24:15.530+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_data_from_youtube_api> on 2024-06-17 00:22:57.834197+00:00
+[2024-06-17T00:24:15.537+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'youtube_etl_dag', 'extract_data_from_youtube_api', 'manual__2024-06-17T00:22:57.834197+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/youtube_etl_dag.py', '--cfg-path', '/tmp/tmp9h3u4kmh']
+[2024-06-17T00:24:15.539+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask extract_data_from_youtube_api
+[2024-06-17T00:24:15.540+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=482) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-06-17T00:24:15.541+0000] {standard_task_runner.py:63} INFO - Started process 495 to run task
+[2024-06-17T00:24:15.632+0000] {task_command.py:426} INFO - Running <TaskInstance: youtube_etl_dag.extract_data_from_youtube_api manual__2024-06-17T00:22:57.834197+00:00 [running]> on host 9ac4a088a2cc
+[2024-06-17T00:24:15.892+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='youtube_etl_dag' AIRFLOW_CTX_TASK_ID='extract_data_from_youtube_api' AIRFLOW_CTX_EXECUTION_DATE='2024-06-17T00:22:57.834197+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-17T00:22:57.834197+00:00'
+[2024-06-17T00:24:15.893+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-17T00:24:15.905+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:17.352+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:18.607+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:19.060+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:20.595+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:21.454+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:22.995+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:24.581+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:26.125+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:27.580+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:28.174+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:29.645+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:30.658+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:31.828+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:33.406+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:34.787+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:35.474+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:35.879+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:37.027+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:38.030+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:38.451+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:39.660+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:41.081+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:42.346+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:42.808+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:44.075+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:45.074+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:45.672+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:46.976+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:48.404+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:49.695+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:50.145+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:51.498+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:52.494+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:52.793+0000] {__init__.py:49} INFO - file_cache is only supported with oauth2client<4.0.0
+[2024-06-17T00:24:54.456+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-17T00:24:54.458+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-17T00:24:54.489+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=youtube_etl_dag, task_id=extract_data_from_youtube_api, run_id=manual__2024-06-17T00:22:57.834197+00:00, execution_date=20240617T002257, start_date=20240617T002415, end_date=20240617T002454
+[2024-06-17T00:24:54.628+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-17T00:24:54.668+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-17T00:24:54.672+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
