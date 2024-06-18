@@ -2,8 +2,6 @@ PROJECT DESCRIPTION:
 
 This project is about creating an ETL pipeline which extracts the data from Youtube Data API and transforms it using PySpark and loads the data in AWS S3.
 
--> Utilized Apache Airflow in creating the dag for the ETL tasks
--> Transformed the data to JSON and utilized Kafka as data sink and stored the data in S3 for further analysis.
 
 USED TECHNOLOGIES, LIBRARIES AND APIs:
 
