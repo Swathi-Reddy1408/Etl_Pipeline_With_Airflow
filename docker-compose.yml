@@ -4,8 +4,8 @@ services:
   airflowproject:
     image: airflow-project:latest
     environment:
-      - AWS_ACCESS_KEY_ID=AKIA6GBMBRGXZIHIXL6W
-      - AWS_SECRET_ACCESS_KEY=MPjH/bYevBgV1ZZvHRmRsxB/R8MHINEXV2NBM7Ji
+      - AWS_ACCESS_KEY_ID=your-aws-access-key
+      - AWS_SECRET_ACCESS_KEY=your-aws-secret-access-key
       - YOUTUBE_API_KEY=AIzaSyD1ZDOXbum9HiukOJgKNPn4O5jviRYk7yI
     volumes:
       - ./airflow:/opt/airflow
