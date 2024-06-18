@@ -10,8 +10,11 @@ USED TECHNOLOGIES, LIBRARIES AND APIs:
 Apache Airflow - For orchestration of pipeline
 
 Youtube Data API - For extracting the data
+
 PySpark - To process the extracted data
+
 AWS S3 - For storing the data
+
 PROJECT ARCHITECTURE:
 ![image](https://github.com/Swathi-Reddy1408/Etl_Pipeline_With_Airflow/assets/52827609/45933ea1-bed8-4a6e-b65b-55fc3ff1f8e9)
 
