@@ -19,3 +19,6 @@ PROJECT ARCHITECTURE:
 
 ![image](https://github.com/Swathi-Reddy1408/Etl_Pipeline_With_Airflow/assets/52827609/45933ea1-bed8-4a6e-b65b-55fc3ff1f8e9)
 
+The below medium article has everything in detail how this etl pipeline works!  Happy Coding !!
+
+
