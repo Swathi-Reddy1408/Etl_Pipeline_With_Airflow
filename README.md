@@ -12,6 +12,7 @@ Youtube Data API - For extracting the data
 PySpark - To process the extracted data
 
 AWS S3 - For storing the data
+Docker 
 
 PROJECT ARCHITECTURE:
 
