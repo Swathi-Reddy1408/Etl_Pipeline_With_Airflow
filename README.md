@@ -8,6 +8,7 @@ This project is about creating an ETL pipeline which extracts the data from Yout
 USED TECHNOLOGIES, LIBRARIES AND APIs:
 
 Apache Airflow - For orchestration of pipeline
+
 Youtube Data API - For extracting the data
 PySpark - To process the extracted data
 AWS S3 - For storing the data
