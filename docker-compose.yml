@@ -6,7 +6,7 @@ services:
     environment:
       - AWS_ACCESS_KEY_ID=your-aws-access-key
       - AWS_SECRET_ACCESS_KEY=your-aws-secret-access-key
-      - YOUTUBE_API_KEY=AIzaSyD1ZDOXbum9HiukOJgKNPn4O5jviRYk7yI
+      - YOUTUBE_API_KEY=your-youtube-api-key
     volumes:
       - ./airflow:/opt/airflow
     ports:
