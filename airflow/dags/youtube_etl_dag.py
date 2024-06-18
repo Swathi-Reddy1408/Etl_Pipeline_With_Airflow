@@ -194,7 +194,7 @@ load_data_to_s3_task = PythonOperator(
     task_id='load_data_to_s3',
     python_callable=load_data_to_s3,
     op_kwargs={
-        'bucket_name': 'apache-airflow-project-load-processed-data-14081999'
+        'bucket_name': 'your-s3bucket-name'
     },
     dag=dag
 )
